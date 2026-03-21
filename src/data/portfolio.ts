@@ -233,6 +233,21 @@ export const PORTFOLIO = {
       ],
     },
     {
+      id: "germany-autumn-school",
+      year: "Oct 2025",
+      title: "German–Israeli Autumn School 2025",
+      subtitle: "Otto von Guericke University Magdeburg × SCE",
+      type: "education",
+      description:
+          "Participated in an international academic exchange program at Otto von Guericke University Magdeburg in collaboration with Sami Shamoon College of Engineering (SCE), focused on engineering, intercultural collaboration, and hands-on academic activities.",
+      highlights: [
+        "Participated in academic engineering sessions and lab tours",
+        "Visited companies and took part in intercultural workshops",
+        "Worked on a collaborative international project and final presentation",
+        "Strengthened cross-cultural teamwork and international academic exposure",
+      ],
+    },
+    {
       id: "exp-pathfinding",
       year: "Feb 2026",
       title: "Personal Project",
