@@ -5,6 +5,8 @@ import { PORTFOLIO } from "@/data/portfolio";
 import { Mail, Github, Linkedin, Send, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const SHOW_PHONE = false;
+
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -100,18 +102,20 @@ export function Contact() {
                 transition={{ duration: 0.5 }}
                 className="md:col-span-5 space-y-4"
             >
-              <a
-                  href={`tel:${PORTFOLIO.personal.phone}`}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:bg-secondary/50 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">Phone</p>
-                  <p className="text-foreground font-semibold">{PORTFOLIO.personal.phone}</p>
-                </div>
-              </a>
+              {SHOW_PHONE && (
+                  <a
+                      href={`tel:${PORTFOLIO.personal.phone}`}
+                      className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:bg-secondary/50 transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-muted-foreground">Phone</p>
+                      <p className="text-foreground font-semibold">{PORTFOLIO.personal.phone}</p>
+                    </div>
+                  </a>
+              )}
 
               <a
                   href={`mailto:${PORTFOLIO.personal.email}`}
