@@ -64,7 +64,13 @@ export const PORTFOLIO = {
         { name: "GitHub",    icon: DEVICON("github")               },
         { name: "Jira",      icon: DEVICON("jira", "plain")        },
         { name: "JetBrains", icon: "https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" },
-        { name: "Replit",    icon: null                            },
+        { name: "Replit",    icon: "https://cdn.simpleicons.org/replit/FF3C00" },
+      ],
+    },
+    {
+      category: "Databases",
+      items: [
+        { name: "PostgreSQL", icon: DEVICON("postgresql") },
       ],
     },
     {
