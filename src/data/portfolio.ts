@@ -1,3 +1,4 @@
+import type { SkillIcon, SkillIconName } from "@/lib/skill-icons";
 export const NAV_ITEMS = [
   { id: "hero",       label: "Home"       },
   { id: "about",      label: "About"      },
@@ -14,6 +15,21 @@ const DEVICON = (name: string, variant = "original") =>
 
 const GH_OG = (repo: string) =>
   `https://opengraph.githubassets.com/1/JordanDaudu/${repo}`;
+
+const DEVICON_ICON = (name: string, variant = "original"): SkillIcon => ({
+  kind: "image",
+  src: DEVICON(name, variant),
+});
+
+const IMAGE_ICON = (src: string): SkillIcon => ({
+  kind: "image",
+  src,
+});
+
+const LUCIDE_ICON = (name: SkillIconName): SkillIcon => ({
+  kind: "lucide",
+  name,
+});
 
 export const PORTFOLIO = {
   personal: {
@@ -37,52 +53,57 @@ export const PORTFOLIO = {
 
   skills: [
     {
-      category: "Languages",
+      category: "Programming Languages",
       items: [
-        { name: "Java",     icon: DEVICON("java")       },
-        { name: "Python",   icon: DEVICON("python")     },
-        { name: "C++",      icon: DEVICON("cplusplus")  },
-        { name: "C#",       icon: DEVICON("csharp")     },
-        { name: "GDScript", icon: DEVICON("godot")      },
-        { name: "HTML",     icon: DEVICON("html5")      },
+        { name: "Java",     icon: DEVICON_ICON("java") },
+        { name: "Python",   icon: DEVICON_ICON("python") },
+        { name: "C++",      icon: DEVICON_ICON("cplusplus") },
+        { name: "C#",       icon: DEVICON_ICON("csharp") },
+        { name: "GDScript", icon: DEVICON_ICON("godot") },
+        { name: "HTML",     icon: DEVICON_ICON("html5") },
       ],
     },
     {
       category: "Frameworks & Engines",
       items: [
-        { name: "Unity",   icon: DEVICON("unity")          },
-        { name: "PyTorch", icon: DEVICON("pytorch")        },
-        { name: ".NET",    icon: DEVICON("dot-net", "plain") },
-        { name: "OpenCV",  icon: DEVICON("opencv")         },
-        { name: "NumPy",   icon: DEVICON("numpy")          },
+        { name: "Unity",   icon: DEVICON_ICON("unity") },
+        { name: ".NET",    icon: DEVICON_ICON("dot-net", "plain") },
+        { name: "PyTorch", icon: DEVICON_ICON("pytorch") },
+        { name: "OpenCV",  icon: DEVICON_ICON("opencv") },
+        { name: "NumPy",   icon: DEVICON_ICON("numpy") },
       ],
     },
     {
       category: "Tools & Platforms",
       items: [
-        { name: "Git",       icon: DEVICON("git")                  },
-        { name: "GitHub",    icon: DEVICON("github")               },
-        { name: "Jira",      icon: DEVICON("jira", "plain")        },
-        { name: "JetBrains", icon: "https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" },
-        { name: "Replit",    icon: "https://cdn.simpleicons.org/replit/FF3C00" },
+        { name: "Git",       icon: DEVICON_ICON("git") },
+        { name: "GitHub",    icon: DEVICON_ICON("github") },
+        { name: "Jira",      icon: DEVICON_ICON("jira", "plain") },
+        { name: "JetBrains", icon: IMAGE_ICON("https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg") },
+        { name: "Replit",    icon: IMAGE_ICON("https://cdn.simpleicons.org/replit/FF3C00") },
       ],
     },
     {
-      category: "Databases",
+      category: "Backend & Data",
       items: [
-        { name: "PostgreSQL", icon: DEVICON("postgresql") },
+        { name: "PostgreSQL", icon: DEVICON_ICON("postgresql") },
       ],
     },
     {
-      category: "Core Concepts",
+      category: "Engineering Foundations",
       items: [
-        { name: "Object Oriented Programming", icon: null },
-        { name: "Algorithms",                  icon: null },
-        { name: "Data Structures",             icon: null },
-        { name: "System Design",               icon: null },
-        { name: "Critical Thinking",           icon: null },
-        { name: "Teamwork",                    icon: null },
-        { name: "Time Management",             icon: null },
+        { name: "Object Oriented Programming", icon: LUCIDE_ICON("boxes") },
+        { name: "Algorithms",                  icon: LUCIDE_ICON("workflow") },
+        { name: "Data Structures",             icon: LUCIDE_ICON("database") },
+        { name: "System Design",               icon: LUCIDE_ICON("layoutGrid") },
+      ],
+    },
+    {
+      category: "Professional Strengths",
+      items: [
+        { name: "Critical Thinking", icon: LUCIDE_ICON("brain") },
+        { name: "Teamwork",          icon: LUCIDE_ICON("users") },
+        { name: "Time Management",   icon: LUCIDE_ICON("clock3") },
       ],
     },
   ],
@@ -132,13 +153,13 @@ export const PORTFOLIO = {
     // ── Other Projects (newest to oldest) ───────────────────────────────────
     {
       id: "nomad-protocol-website",
-      title: "AETERRA Devlog Website",
-      subtitle: "React + TypeScript + Express — Game Archive",
+      title: "AETERRA Engineering Archive Website",
+      subtitle: "React + TypeScript + Vite — Static Game Archive",
       category: "Web Dev",
       featured: false,
       thumbnail: "/images/project-aeterra-website.jpg",
       description:
-        "A dedicated devlog, lore archive, and media gallery website for Nomad Protocol: AETERRA. Built with React, TypeScript, Vite, and Express.js, using a file-based CMS where Markdown files automatically appear on the site. Styled with Tailwind CSS v4.",
+        "A dedicated engineering archive website for Nomad Protocol: AETERRA, featuring devlogs, lore archives, systems documentation, and a media gallery. Built as a fully static React + TypeScript + Vite site with a file-based content pipeline, where Markdown and media are transformed into site content during generation/build. Styled with Tailwind CSS v4.",
       tech: ["React", "TypeScript", "Vite", "Express.js", "Tailwind CSS", "Markdown"],
       highlights: [
         "File-based CMS: drop Markdown files in folders and they appear on the site automatically",
@@ -310,14 +331,15 @@ export const PORTFOLIO = {
       id: "exp-aeterra-website",
       year: "2024 – Present",
       title: "Personal Project",
-      subtitle: "AETERRA Devlog Website — React / TypeScript / Express",
+      subtitle: "AETERRA Engineering Archive Website — React / TypeScript / Vite",
       type: "project",
       description:
-        "Designed and built a full-stack devlog, lore archive, and media gallery website for Nomad Protocol: AETERRA, running alongside the game's development. Uses a file-based CMS where Markdown files automatically populate the site.",
+        "Architected and built a static content-driven website for Nomad Protocol: AETERRA that functions as a combined devlog platform, lore archive, systems documentation hub, and media gallery. The project uses a file-based content pipeline that transforms Markdown and media assets into generated static content, making it easy to scale and maintain as the game evolves.",
       highlights: [
-        "React + TypeScript + Vite frontend with a Node.js/Express backend",
-        "File-based CMS: drop Markdown files in a folder, they appear on the site automatically",
-        "Tailwind CSS v4 design system with ambient interactive backgrounds",
+        "Developed a React + TypeScript + Vite static site for project documentation and presentation",
+        "Designed a build-time content generation pipeline for Markdown-based devlogs, lore, technical archives, gallery media, and audio assets",
+        "Organized the project around a maintainable content-source → generated-output workflow instead of a backend-driven CMS",
+        "Built a custom Tailwind CSS v4 interface with atmospheric sci-fi styling, structured content sections, and route-aware soundtrack switching",
       ],
     },
     {
