@@ -149,6 +149,26 @@ export const PORTFOLIO = {
       githubUrl: "https://github.com/JordanDaudu/Dungeons_And_Dragons",
       demoUrl: "",
     },
+    {
+      id: "eventstaffmanagementsystem",
+      title: "Event & Staff Management Platform",
+      subtitle: "Full-Stack Event Staffing Management Platform",
+      category: "Web Dev",
+      featured: true,
+      thumbnail: "/images/project-event-staff-management-system.png",
+      description:
+          "A production-oriented full-stack event staffing management system built for scheduling workers across multiple halls and event slots. Designed with role-based access, smart staffing calculations, admin override flows, weekly planning views, and a responsive Hebrew RTL interface. Showcased publicly as a case study because the original source code was delivered in a workplace context and is not available for redistribution.",
+      tech: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "Prisma", "JWT"],
+      highlights: [
+        "Multi-hall scheduling with separate afternoon and evening event slots",
+        "Role-based system with admin, privileged waitress, and waitress workflows",
+        "Smart staffing calculation with admin override support",
+        "Responsive Hebrew RTL dashboard for scheduling, staff management, and weekly overviews",
+        "Led migration from email-based login to phone-number-based authentication",
+      ],
+      githubUrl: "https://github.com/JordanDaudu/EventStaffManagementSystemShowcase",
+      demoUrl: "",
+    },
 
     // ── Other Projects (newest to oldest) ───────────────────────────────────
     {
@@ -286,6 +306,22 @@ export const PORTFOLIO = {
         "7 algorithms with live grid visualization and adjustable speed control",
         "Weighted tiles, wall drawing, and a debug overlay mode",
         "Algorithm Theory panel showing time/space complexity and observed run stats per run",
+      ],
+    },
+    {
+      id: "exp-adama-staffschedule",
+      year: "Nov 2025 – Dec 2025",
+      title: "Full-Stack Developer",
+      subtitle: "Adama — Event Staffing Management System",
+      type: "work",
+      description:
+          "Developed a production-oriented full-stack workforce scheduling platform for event operations, supporting multi-hall staffing, role-based access control, smart staffing logic, and responsive Hebrew RTL dashboards.",
+      highlights: [
+        "Built a multi-hall scheduling system with separate afternoon and evening event slots",
+        "Implemented role-based workflows for admins, privileged workers, and standard workers",
+        "Designed smart staffing calculation with admin override support",
+        "Added weekly overviews, personal shifts, worker management, and hall management flows",
+        "Led migration from email-based login to phone-number-based authentication",
       ],
     },
     {
