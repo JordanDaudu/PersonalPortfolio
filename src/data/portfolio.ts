@@ -126,7 +126,7 @@ export const PORTFOLIO = {
         "Fully decoupled architecture enabling independent iteration of every system",
         "Companion devlog website (React/TypeScript) documenting all engineering decisions",
       ],
-      githubUrl: "https://github.com/JordanDaudu/Nomad-Protocol-Aeterra-Website",
+      githubUrl: "https://github.com/JordanDaudu/Unity-Project-Nomad-Protocol-Aeterra-Showcase",
       demoUrl: "",
     },
     {
