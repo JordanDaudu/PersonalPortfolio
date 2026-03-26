@@ -187,7 +187,7 @@ export const PORTFOLIO = {
         "Custom design system with ambient interactive backgrounds",
       ],
       githubUrl: "https://github.com/JordanDaudu/Nomad-Protocol-Aeterra-Website",
-      demoUrl: "",
+      demoUrl: "https://nomad-protocol-aeterra.onrender.com/",
     },
     {
       id: "pathfinding-visualizer",
