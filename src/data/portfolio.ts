@@ -265,6 +265,21 @@ export const PORTFOLIO = {
 
   experience: [
     {
+      id: "exp-ta",
+      year: "Apr 2026 – Present",
+      title: "Teaching Assistant (Exercise Reviewer)",
+      subtitle: "SCE — Shamoon College of Engineering",
+      type: "work",
+      description:
+          "Selected by the university to review and evaluate student assignments in core computer science courses, including Object-Oriented Programming, Advanced OOP, and Principles of Programming Languages.",
+      highlights: [
+        "Reviewed and graded student assignments with a focus on correctness, abstraction, and design quality",
+        "Provided structured feedback on OOP principles, debugging, and code organization",
+        "Identified common software design mistakes and guided improvements",
+        "Strengthened practical expertise in code review and software engineering fundamentals",
+      ],
+    },
+    {
       id: "sce",
       year: "2023 – Present",
       title: "B.Sc. Software Engineering",
@@ -312,7 +327,7 @@ export const PORTFOLIO = {
       id: "exp-adama-staffschedule",
       year: "Nov 2025 – Dec 2025",
       title: "Full-Stack Developer",
-      subtitle: "Adama — Event Staffing Management System",
+      subtitle: "Adama Ashdod — Event Staffing Management System",
       type: "work",
       description:
           "Developed a production-oriented full-stack workforce scheduling platform for event operations, supporting multi-hall staffing, role-based access control, smart staffing logic, and responsive Hebrew RTL dashboards.",

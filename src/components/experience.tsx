@@ -1,87 +1,268 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { PORTFOLIO } from "@/data/portfolio";
-import { GraduationCap, Briefcase, Code2 } from "lucide-react";
+import { GraduationCap, Briefcase, Code2, LucideIcon } from "lucide-react";
 
-const TYPE_CONFIG = {
-  education: { label: "Education",   color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20",   Icon: GraduationCap },
-  work:      { label: "Experience",  color: "bg-primary/10 text-primary border-primary/20",       Icon: Briefcase     },
-  project:   { label: "Project",     color: "bg-violet-500/10 text-violet-400 border-violet-500/20", Icon: Code2      },
-} as const;
+// ─────────────────────────────────────────────────────────────────────────────
+// Category configuration
+// To add a new category: add one entry here. Everything else adapts automatically.
+// ─────────────────────────────────────────────────────────────────────────────
+interface CategoryMeta {
+  label: string;
+  icon: LucideIcon;
+  order: number;
+  headingColor: string;
+  iconColor: string;
+  groupIconBg: string;
+  dotBorder: string;
+  yearBadge: string;
+}
 
-export function Experience() {
+const CATEGORY_CONFIG: Record<string, CategoryMeta> = {
+  education: {
+    label: "Education",
+    icon: GraduationCap,
+    order: 0,
+    headingColor: "text-cyan-400",
+    iconColor: "text-cyan-400",
+    groupIconBg: "bg-cyan-500/10",
+    dotBorder: "border-cyan-500/40",
+    yearBadge: "bg-cyan-500/10 text-cyan-400",
+  },
+  work: {
+    label: "Experience",
+    icon: Briefcase,
+    order: 1,
+    headingColor: "text-primary",
+    iconColor: "text-primary",
+    groupIconBg: "bg-primary/10",
+    dotBorder: "border-primary/40",
+    yearBadge: "bg-primary/10 text-primary",
+  },
+  project: {
+    label: "Projects",
+    icon: Code2,
+    order: 2,
+    headingColor: "text-violet-400",
+    iconColor: "text-violet-400",
+    groupIconBg: "bg-violet-500/10",
+    dotBorder: "border-violet-500/40",
+    yearBadge: "bg-violet-500/10 text-violet-400",
+  },
+} satisfies Record<string, CategoryMeta>;
+
+// Ordered list of [key, meta] pairs sorted by `order`
+const ORDERED_CATEGORIES = Object.entries(CATEGORY_CONFIG).sort(
+    ([, a], [, b]) => a.order - b.order,
+);
+
+type FilterValue = "all" | string;
+
+const FILTERS: { value: FilterValue; label: string }[] = [
+  { value: "all", label: "All" },
+  ...ORDERED_CATEGORIES.map(([key, cfg]) => ({ value: key, label: cfg.label })),
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ExperienceCard
+// ─────────────────────────────────────────────────────────────────────────────
+interface ExpEntry {
+  id: string;
+  year: string;
+  title: string;
+  subtitle: string;
+  type: string;
+  description: string;
+  highlights?: string[];
+}
+
+function ExperienceCard({ exp, idx }: { exp: ExpEntry; idx: number }) {
+  const cfg = CATEGORY_CONFIG[exp.type] ?? CATEGORY_CONFIG.work;
+  const Icon = cfg.icon;
+
   return (
-    <section id="experience" className="py-24 bg-secondary/20 relative overflow-hidden">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+      <motion.div
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ delay: idx * 0.07, duration: 0.45 }}
+          className="relative pl-12 sm:pl-14"
+      >
+        {/* Dot */}
+        <div
+            className={`absolute left-0 top-4 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-card border-2 ${cfg.dotBorder} flex items-center justify-center shadow-md shrink-0`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Journey</h2>
-          <div className="w-12 h-1.5 bg-primary rounded-full mx-auto" />
-        </motion.div>
-
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border/60" />
-
-          <div className="space-y-8">
-            {PORTFOLIO.experience.map((exp, idx) => {
-              const cfg = TYPE_CONFIG[exp.type as keyof typeof TYPE_CONFIG] ?? TYPE_CONFIG.work;
-              const { Icon } = cfg;
-
-              return (
-                <motion.div
-                  key={exp.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ delay: idx * 0.08, duration: 0.5 }}
-                  className="relative pl-14"
-                >
-                  {/* Dot on line */}
-                  <div className="absolute left-0 top-5 w-9 h-9 rounded-full bg-card border-2 border-primary/40 flex items-center justify-center shadow-md">
-                    <Icon className="w-4 h-4 text-primary" />
-                  </div>
-
-                  {/* Card */}
-                  <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
-                    {/* Type badge + year */}
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${cfg.color}`}>
-                        {cfg.label}
-                      </span>
-                      <span className="text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
-                        {exp.year}
-                      </span>
-                    </div>
-
-                    <h3 className="text-base font-bold text-foreground">{exp.title}</h3>
-                    <p className="text-sm font-medium text-muted-foreground mb-3">{exp.subtitle}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{exp.description}</p>
-
-                    {/* Highlights */}
-                    {exp.highlights && exp.highlights.length > 0 && (
-                      <ul className="mt-4 space-y-1.5">
-                        {exp.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs text-muted-foreground">
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/70 shrink-0" />
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+          <Icon className={`w-3.5 h-3.5 ${cfg.iconColor}`} />
         </div>
 
-      </div>
-    </section>
+        {/* Card */}
+        <div className="bg-card border border-border/50 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-primary/25 transition-all duration-300">
+          {/* Year */}
+          <div className="mb-3">
+          <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full ${cfg.yearBadge}`}>
+            {exp.year}
+          </span>
+          </div>
+
+          <h3 className="text-sm sm:text-base font-bold text-foreground leading-snug">
+            {exp.title}
+          </h3>
+          <p className="text-xs sm:text-sm font-medium text-muted-foreground mt-0.5 mb-3">
+            {exp.subtitle}
+          </p>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            {exp.description}
+          </p>
+
+          {exp.highlights && exp.highlights.length > 0 && (
+              <ul className="mt-4 space-y-1.5">
+                {exp.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-muted-foreground">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
+                      <span className="leading-relaxed">{h}</span>
+                    </li>
+                ))}
+              </ul>
+          )}
+        </div>
+      </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ExperienceGroup — one grouped section (Education / Experience / Projects / …)
+// ─────────────────────────────────────────────────────────────────────────────
+function ExperienceGroup({
+                           categoryKey,
+                           entries,
+                           groupIdx,
+                         }: {
+  categoryKey: string;
+  entries: ExpEntry[];
+  groupIdx: number;
+}) {
+  const cfg = CATEGORY_CONFIG[categoryKey] ?? CATEGORY_CONFIG.work;
+  const Icon = cfg.icon;
+
+  return (
+      <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ delay: groupIdx * 0.08, duration: 0.5 }}
+          className="mb-16 last:mb-0"
+      >
+        {/* Group heading row */}
+        <div className="flex items-center gap-3 mb-8">
+          <div className={`w-9 h-9 rounded-xl ${cfg.groupIconBg} flex items-center justify-center shrink-0`}>
+            <Icon className={`w-4 h-4 ${cfg.iconColor}`} />
+          </div>
+          <h3 className={`text-lg sm:text-xl font-bold ${cfg.headingColor}`}>{cfg.label}</h3>
+          <div className="flex-1 h-px bg-border/40" />
+          <span className="text-xs font-medium text-muted-foreground bg-secondary/70 px-2.5 py-1 rounded-full shrink-0">
+          {entries.length} {entries.length === 1 ? "entry" : "entries"}
+        </span>
+        </div>
+
+        {/* Timeline track + cards */}
+        <div className="relative">
+          <div className="absolute left-4 top-2 bottom-2 w-px bg-border/40" />
+          <div className="space-y-5 sm:space-y-6">
+            {entries.map((exp, idx) => (
+                <ExperienceCard key={exp.id} exp={exp} idx={idx} />
+            ))}
+          </div>
+        </div>
+      </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Main Experience section
+// ─────────────────────────────────────────────────────────────────────────────
+export function Experience() {
+  const [activeFilter, setActiveFilter] = useState<FilterValue>("all");
+
+  // Group entries by type key
+  const grouped = PORTFOLIO.experience.reduce<Record<string, ExpEntry[]>>((acc, exp) => {
+    const key = exp.type;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(exp);
+    return acc;
+  }, {});
+
+  // Ordered, filtered groups (skip empty ones)
+  const visibleGroups = ORDERED_CATEGORIES
+      .filter(([key]) => activeFilter === "all" || activeFilter === key)
+      .filter(([key]) => (grouped[key]?.length ?? 0) > 0)
+      .map(([key], groupIdx) => ({ key, entries: grouped[key]!, groupIdx }));
+
+  return (
+      <section id="experience" className="py-24 bg-secondary/20 relative overflow-hidden">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+
+          {/* Section heading */}
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Journey</h2>
+            <div className="w-12 h-1.5 bg-primary rounded-full mx-auto mb-5" />
+            <p className="text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
+              Education, professional experience, and engineering projects — organized for quick scanning.
+            </p>
+          </motion.div>
+
+          {/* Filter controls */}
+          <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.15 }}
+              className="flex flex-wrap justify-center gap-2 mb-14"
+              role="group"
+              aria-label="Filter experience by category"
+          >
+            {FILTERS.map(({ value, label }) => (
+                <button
+                    key={value}
+                    onClick={() => setActiveFilter(value)}
+                    aria-pressed={activeFilter === value}
+                    className={[
+                      "px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border",
+                      activeFilter === value
+                          ? "bg-primary text-primary-foreground border-primary shadow-sm shadow-primary/25"
+                          : "bg-card text-muted-foreground border-border/50 hover:border-primary/40 hover:text-foreground",
+                    ].join(" ")}
+                >
+                  {label}
+                </button>
+            ))}
+          </motion.div>
+
+          {/* Grouped content with animated transition on filter change */}
+          <AnimatePresence mode="wait">
+            <motion.div
+                key={activeFilter}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.22 }}
+            >
+              {visibleGroups.map(({ key, entries, groupIdx }) => (
+                  <ExperienceGroup
+                      key={key}
+                      categoryKey={key}
+                      entries={entries}
+                      groupIdx={groupIdx}
+                  />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+        </div>
+      </section>
   );
 }
