@@ -264,21 +264,7 @@ export const PORTFOLIO = {
   ],
 
   experience: [
-    {
-      id: "exp-ta",
-      year: "Apr 2026 – Present",
-      title: "Teaching Assistant (Exercise Reviewer)",
-      subtitle: "SCE — Shamoon College of Engineering",
-      type: "work",
-      description:
-          "Selected by the university to review and evaluate student assignments in core computer science courses, including Object-Oriented Programming, Advanced OOP, and Principles of Programming Languages.",
-      highlights: [
-        "Reviewed and graded student assignments with a focus on correctness, abstraction, and design quality",
-        "Provided structured feedback on OOP principles, debugging, and code organization",
-        "Identified common software design mistakes and guided improvements",
-        "Strengthened practical expertise in code review and software engineering fundamentals",
-      ],
-    },
+    // Education — newest/current to oldest
     {
       id: "sce",
       year: "2023 – Present",
@@ -286,13 +272,14 @@ export const PORTFOLIO = {
       subtitle: "SCE — Shamoon College of Engineering",
       type: "education",
       description:
-        "Focusing heavily on OOP, scalable system design, complex algorithms, and data structures. GPA: 95 as of end of year two.",
+          "Focusing heavily on OOP, scalable system design, complex algorithms, and data structures. GPA: 95 as of end of year two.",
       highlights: [
         "Rector-President's Award for Excellence",
         "Certificate of Excellence for High Entrance Scores",
         "German Israeli Autumn School Exchange Program Participation Certificate",
         "Score as of end of year two: 95",
       ],
+      badges: ["GPA: 95", "Rector-President's Award"],
     },
     {
       id: "germany-autumn-school",
@@ -308,20 +295,50 @@ export const PORTFOLIO = {
         "Worked on a collaborative international project and final presentation",
         "Strengthened cross-cultural teamwork and international academic exposure",
       ],
+      badges: ["International Exchange"],
     },
     {
-      id: "exp-pathfinding",
-      year: "Feb 2026",
-      title: "Personal Project",
-      subtitle: "Pathfinding Visualizer — Python / Pygame",
-      type: "project",
+      id: "ort",
+      year: "2019 – 2021",
+      title: "P.Eng — Electronics & Computer Engineering",
+      subtitle: "ORT Colleges",
+      type: "education",
       description:
-        "Built an interactive pathfinding algorithm visualizer in Python, supporting 7 algorithms (BFS, DFS, Dijkstra, Bellman-Ford, A*, IDA*, Greedy Best-First) on a weighted grid with real-time visualization, wall drawing, and a live Algorithm Theory panel.",
+          "Practical Engineer diploma in Electronics and Computer Engineering — Electronic Systems. Final score: 95.",
       highlights: [
-        "7 algorithms with live grid visualization and adjustable speed control",
-        "Weighted tiles, wall drawing, and a debug overlay mode",
-        "Algorithm Theory panel showing time/space complexity and observed run stats per run",
+        "Completed a full technological diploma including 10 units in electronics and computers",
+        "Certificate in Electronics and Computers Engineering — Electronic Systems",
       ],
+      badges: ["Final Score: 95"],
+    },
+    {
+      id: "exp-start",
+      year: "2016 – 2019",
+      title: "Technological Diploma",
+      subtitle: "ORT",
+      type: "education",
+      description:
+          "Full technological diploma including 10 units in electronics and computers — the foundation of a deep interest in software and systems.",
+      highlights: [],
+    },
+
+    // Work — newest to oldest
+    {
+      id: "exp-ta",
+      year: "Apr 2026 – Present",
+      title: "Teaching Assistant (Exercise Reviewer)",
+      subtitle: "SCE — Shamoon College of Engineering",
+      type: "work",
+      description:
+          "Selected by the university to review and evaluate student assignments in core computer science courses, including Object-Oriented Programming, Advanced OOP, and Principles of Programming Languages.",
+      highlights: [
+        "Reviewed and graded student assignments with a focus on correctness, abstraction, and design quality",
+        "Provided structured feedback on OOP principles, debugging, and code organization",
+        "Identified common software design mistakes and guided improvements",
+        "Strengthened practical expertise in code review and software engineering fundamentals",
+      ],
+      badges: ["Selected by Faculty"],
+      tech: ["Java", "OOP", "Code Review"],
     },
     {
       id: "exp-adama-staffschedule",
@@ -338,6 +355,15 @@ export const PORTFOLIO = {
         "Added weekly overviews, personal shifts, worker management, and hall management flows",
         "Led migration from email-based login to phone-number-based authentication",
       ],
+      badges: ["Production Delivery"],
+      tech: ["React", "Next.js", "Node.js", "PostgreSQL", "Prisma"],
+      links: [
+        {
+          label: "Showcase Repo",
+          url: "https://github.com/JordanDaudu/EventStaffManagementSystemShowcase",
+          icon: "github",
+        },
+      ],
     },
     {
       id: "exp-fly",
@@ -346,12 +372,75 @@ export const PORTFOLIO = {
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
-        "Worked on a biological data analysis project predicting fly age from movement tracking data. Extended an existing FlyTracking ML pipeline using PyTorch, developing RNN models and collaborating with biology researchers.",
+          "Worked on a biological data analysis project predicting fly age from movement tracking data. Extended an existing FlyTracking ML pipeline using PyTorch, developing RNN models and collaborating with biology researchers.",
       highlights: [
         "Developed RNN-based models using PyTorch to analyze time-series motion data from CSV",
         "Engineered biologically relevant features to improve model accuracy",
         "Collaborated with biology researchers to translate biological insights into ML features",
         "Iterated across multiple model versions, optimizing training performance and evaluation metrics",
+      ],
+      badges: ["Applied ML Research"],
+      tech: ["Python", "PyTorch", "RNN", "Time-Series ML"],
+      links: [
+        {
+          label: "GitHub",
+          url: "https://github.com/JordanDaudu/FlyTrackerDataLearning",
+          icon: "github",
+        },
+      ],
+    },
+
+    // Projects — newest/current to oldest
+    {
+      id: "exp-nomad",
+      year: "2024 – Present",
+      title: "Lead Developer (Solo)",
+      subtitle: "Nomad Protocol: AETERRA",
+      type: "project",
+      description:
+          "Designing and building a modular Unity/C# 3D shooter from scratch. Focused on scalable, maintainable architecture with clean decoupling between systems.",
+      highlights: [],
+      badges: ["Flagship Project"],
+      tech: ["C#", "Unity", "AI State Machines", "Object Pooling"],
+      links: [
+        {
+          label: "Showcase Repo",
+          url: "https://github.com/JordanDaudu/Unity-Project-Nomad-Protocol-Aeterra-Showcase",
+          icon: "github",
+        },
+        {
+          label: "Engineering Archive",
+          url: "https://nomad-protocol-aeterra.onrender.com/",
+          icon: "external",
+        },
+      ],
+    },
+    {
+      id: "exp-aeterra-website",
+      year: "2024 – Present",
+      title: "Personal Project",
+      subtitle: "AETERRA Engineering Archive Website — React / TypeScript / Vite",
+      type: "project",
+      description:
+          "Architected and built a static content-driven website for Nomad Protocol: AETERRA that functions as a combined devlog platform, lore archive, systems documentation hub, and media gallery. The project uses a file-based content pipeline that transforms Markdown and media assets into generated static content, making it easy to scale and maintain as the game evolves.",
+      highlights: [
+        "Developed a React + TypeScript + Vite static site for project documentation and presentation",
+        "Designed a build-time content generation pipeline for Markdown-based devlogs, lore, technical archives, gallery media, and audio assets",
+        "Organized the project around a maintainable content-source → generated-output workflow instead of a backend-driven CMS",
+        "Built a custom Tailwind CSS v4 interface with atmospheric sci-fi styling, structured content sections, and route-aware soundtrack switching",
+      ],
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Markdown"],
+      links: [
+        {
+          label: "GitHub",
+          url: "https://github.com/JordanDaudu/Nomad-Protocol-Aeterra-Website",
+          icon: "github",
+        },
+        {
+          label: "Live Site",
+          url: "https://nomad-protocol-aeterra.onrender.com/",
+          icon: "external",
+        },
       ],
     },
     {
@@ -361,36 +450,41 @@ export const PORTFOLIO = {
       subtitle: "Notion Stock Tracker — Python Automation",
       type: "project",
       description:
-        "Built a Python automation tool that scrapes live stock and fund prices from Globes (Israeli financial news) and automatically syncs them to linked Notion pages via the Notion API. Iterated on the tool with small updates over several months.",
+          "Built a Python automation tool that scrapes live stock and fund prices from Globes (Israeli financial news) and automatically syncs them to linked Notion pages via the Notion API. Iterated on the tool with small updates over several months.",
       highlights: [
         "Selenium + BeautifulSoup scraping with a fallback method for reliability",
         "Continuous update mode with configurable polling interval and CSV price logging",
         "Skips unnecessary Notion API calls when the price hasn't changed",
       ],
+      tech: ["Python", "Selenium", "BeautifulSoup", "Notion API"],
+      links: [
+        {
+          label: "GitHub",
+          url: "https://github.com/JordanDaudu/NotionStockTracker",
+          icon: "github",
+        },
+      ],
     },
     {
-      id: "exp-nomad",
-      year: "2024 – Present",
-      title: "Lead Developer (Solo)",
-      subtitle: "Nomad Protocol: AETERRA",
-      type: "project",
-      description:
-        "Designing and building a modular Unity/C# 3D shooter from scratch. Focused on scalable, maintainable architecture with clean decoupling between systems.",
-      highlights: [],
-    },
-    {
-      id: "exp-aeterra-website",
-      year: "2024 – Present",
+      id: "exp-pathfinding",
+      year: "Feb 2026",
       title: "Personal Project",
-      subtitle: "AETERRA Engineering Archive Website — React / TypeScript / Vite",
+      subtitle: "Pathfinding Visualizer — Python / Pygame",
       type: "project",
       description:
-        "Architected and built a static content-driven website for Nomad Protocol: AETERRA that functions as a combined devlog platform, lore archive, systems documentation hub, and media gallery. The project uses a file-based content pipeline that transforms Markdown and media assets into generated static content, making it easy to scale and maintain as the game evolves.",
+          "Built an interactive pathfinding algorithm visualizer in Python, supporting 7 algorithms (BFS, DFS, Dijkstra, Bellman-Ford, A*, IDA*, Greedy Best-First) on a weighted grid with real-time visualization, wall drawing, and a live Algorithm Theory panel.",
       highlights: [
-        "Developed a React + TypeScript + Vite static site for project documentation and presentation",
-        "Designed a build-time content generation pipeline for Markdown-based devlogs, lore, technical archives, gallery media, and audio assets",
-        "Organized the project around a maintainable content-source → generated-output workflow instead of a backend-driven CMS",
-        "Built a custom Tailwind CSS v4 interface with atmospheric sci-fi styling, structured content sections, and route-aware soundtrack switching",
+        "7 algorithms with live grid visualization and adjustable speed control",
+        "Weighted tiles, wall drawing, and a debug overlay mode",
+        "Algorithm Theory panel showing time/space complexity and observed run stats per run",
+      ],
+      tech: ["Python", "Pygame", "Algorithms", "Graph Theory"],
+      links: [
+        {
+          label: "GitHub",
+          url: "https://github.com/JordanDaudu/Pathfinding_visualizer",
+          icon: "github",
+        },
       ],
     },
     {
@@ -400,31 +494,16 @@ export const PORTFOLIO = {
       subtitle: "Dungeons & Dragons — Java RPG",
       type: "project",
       description:
-        "Architected a custom Java co-op RPG engine from the ground up for the Advanced OOP course at SCE. Handled complex threading, networking logic, and comprehensive game state management.",
+          "Architected a custom Java co-op RPG engine from the ground up for the Advanced OOP course at SCE. Handled complex threading, networking logic, and comprehensive game state management.",
       highlights: [],
-    },
-    {
-      id: "ort",
-      year: "2019 – 2021",
-      title: "P.Eng — Electronics & Computer Engineering",
-      subtitle: "ORT Colleges",
-      type: "education",
-      description:
-        "Practical Engineer diploma in Electronics and Computer Engineering — Electronic Systems. Final score: 95.",
-      highlights: [
-        "Completed a full technological diploma including 10 units in electronics and computers",
-        "Certificate in Electronics and Computers Engineering — Electronic Systems",
+      tech: ["Java", "Swing", "OOP", "Threading"],
+      links: [
+        {
+          label: "GitHub",
+          url: "https://github.com/JordanDaudu/Dungeons_And_Dragons",
+          icon: "github",
+        },
       ],
-    },
-    {
-      id: "exp-start",
-      year: "2016 – 2019",
-      title: "Technological Diploma",
-      subtitle: "ORT",
-      type: "education",
-      description:
-        "Full technological diploma including 10 units in electronics and computers — the foundation of a deep interest in software and systems.",
-      highlights: [],
     },
   ],
 

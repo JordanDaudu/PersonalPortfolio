@@ -1,40 +1,87 @@
-# Jordan Daudu Portfolio
+# 🚀 Jordan Daudu — Portfolio
 
-A modern personal portfolio website built to showcase my projects, skills, and experience as a software engineer.
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Frontend](https://img.shields.io/badge/frontend-React%20%7C%20TypeScript-blue)
+![Styling](https://img.shields.io/badge/styling-TailwindCSS-38B2AC)
+![Animations](https://img.shields.io/badge/animations-Framer%20Motion-pink)
+![Deployment](https://img.shields.io/badge/deployed-Render-purple)
 
-## Overview
+🌐 **Live Demo:** https://jordan-daudu-portfolio.onrender.com/
 
-This website is my personal portfolio. It includes sections for:
+---
 
-- About me
-- Skills
-- Featured projects
-- Experience
-- Contact
+## 🧭 Overview
 
-The goal of the site is to present my work in a clean, modern, and professional way while keeping the project simple to run and easy to deploy.
+This website serves as my personal portfolio, designed to present my work in a clean, modern, and professional way.
 
-## Tech Stack
+It includes:
 
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- EmailJS
+* 👨‍💻 About me
+* 🛠️ Technical skills
+* 📦 Featured projects
+* 📈 Journey / Experience
+* 📬 Contact
 
-## Features
+The focus is on **clarity, scalability, and clean engineering**, while keeping the project simple to run and deploy.
 
-- Responsive modern UI
-- Smooth animations and transitions
-- Project showcase section
-- Resume/CV download support
-- Contact form with EmailJS integration
-- Light and dark theme support
+---
 
-## Running Locally
+## 🧠 Engineering Highlights
 
-Clone the project and install dependencies:
+* Config-driven Journey / Experience system (easy category expansion)
+* Centralized content architecture via `portfolio.ts`
+* Component-based scalable UI using React + TypeScript
+* Responsive-first layout across desktop, tablet, and mobile
+* Structured animation system using Framer Motion
+* Clean separation between data, UI, and presentation logic
+
+---
+
+## 🧱 Tech Stack
+
+* **Frontend:** React, TypeScript, Vite
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **Forms:** EmailJS
+
+---
+
+## ✨ Features
+
+* 📱 Fully responsive design (desktop, tablet, mobile)
+* 🎯 Clean, recruiter-friendly layout
+* 🎬 Smooth animations and transitions
+* 📂 Centralized content management (`portfolio.ts`)
+* 📄 Resume / CV download support
+* 📬 Contact form with EmailJS integration
+* 🌗 Light & dark theme support
+* 🧠 Config-driven Journey / Experience section with grouped categories and animated filtering
+
+---
+
+## 🏗️ Project Structure
+
+```text
+src/
+  data/
+    portfolio.ts      # Central content source
+  components/
+    Experience.tsx    # Journey / Experience section
+    Skills.tsx
+    Projects.tsx
+  lib/
+    skill-icons.ts
+```
+
+Static assets:
+
+```text
+public/
+```
+
+---
+
+## ▶️ Running Locally
 
 ```bash
 npm install
@@ -43,9 +90,9 @@ npm run dev
 
 Then open the local development URL shown in the terminal.
 
-## Production Build
+---
 
-To build the project for production:
+## 📦 Production Build
 
 ```bash
 npm install
@@ -53,27 +100,31 @@ npm run build
 npm run preview
 ```
 
-## Deployment
+---
 
-This project can be deployed as a static site on platforms like Render.
+## 🌍 Deployment
 
-### Render setup
+This project can be deployed as a **static site**.
 
-- **Service type:** Static Site
-- **Build command:** `npm run build`
-- **Publish directory:** `dist`
+### Example: Render
 
-If you are using client-side routing, make sure your hosting setup rewrites all routes to:
+* **Service type:** Static Site
+* **Build command:** `npm run build`
+* **Publish directory:** `dist`
+
+If using client-side routing, make sure all routes rewrite to:
 
 ```text
 /index.html
 ```
 
-## Contact Form Setup
+---
 
-The contact form uses EmailJS.
+## 📬 Contact Form Setup
 
-Create a `.env` file in the project root and add:
+Uses **EmailJS**.
+
+Create a `.env` file:
 
 ```env
 VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
@@ -81,7 +132,7 @@ VITE_EMAILJS_SERVICE_ID=your_service_id_here
 VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
 ```
 
-Make sure your EmailJS template includes the variables used by the form, such as:
+Template variables example:
 
 ```text
 {{name}}
@@ -91,22 +142,35 @@ Make sure your EmailJS template includes the variables used by the form, such as
 {{time}}
 ```
 
-## Editing Portfolio Content
+---
 
-Most of the portfolio content is centralized in:
+## ✏️ Editing Portfolio Content
+
+All portfolio content is centralized in:
 
 ```text
 src/data/portfolio.ts
 ```
 
-Static assets such as images, icons, and files are stored in:
+To update:
 
-```text
-public/
-```
+* Projects
+* Experience
+* Skills
+* Personal info
 
-## Notes
+Simply edit this file.
 
-This is a frontend portfolio project built to be simple, fast, and easy to maintain.
+---
+
+## 🧠 Notes
+
+* Built with a focus on **clean architecture and scalability**
+* Designed to grow alongside ongoing projects and experience
+* Structured for easy future expansion (new sections, categories, content types)
+
+---
+
+## ⚡ Built With
 
 Built with the help of Replit.
