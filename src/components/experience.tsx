@@ -110,16 +110,37 @@ interface ExpEntry {
 // ─────────────────────────────────────────────────────────────────────────────
 // EntryBadges — subtle achievement chips (optional, high-signal only)
 // ─────────────────────────────────────────────────────────────────────────────
-function EntryBadges({ badges }: { badges: string[] }) {
+function EntryBadges({
+                       badges,
+                       type,
+                     }: {
+  badges: string[];
+  type: string;
+}) {
   if (badges.length === 0) return null;
+
+  const badgeStyles =
+      type === "education"
+          ? "bg-cyan-500/8 text-cyan-300 border border-cyan-500/20"
+          : type === "project"
+              ? "bg-violet-500/8 text-violet-300 border border-violet-500/20"
+              : "bg-primary/8 text-primary/90 border border-primary/20";
+
+  const iconStyles =
+      type === "education"
+          ? "text-cyan-400/70"
+          : type === "project"
+              ? "text-violet-400/70"
+              : "text-primary/70";
+
   return (
       <div className="flex flex-wrap gap-1.5 mt-1.5 mb-2.5">
         {badges.map((label) => (
             <span
                 key={label}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-cyan-500/8 text-cyan-300 border border-cyan-500/20"
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${badgeStyles}`}
             >
-          <Award className="w-2.5 h-2.5 shrink-0 text-cyan-400/70" />
+          <Award className={`w-2.5 h-2.5 shrink-0 ${iconStyles}`} />
               {label}
         </span>
         ))}
@@ -205,7 +226,7 @@ function ExperienceCard({ exp, idx }: { exp: ExpEntry; idx: number }) {
           </div>
 
           {/* Achievement badges (optional) */}
-          {exp.badges && <EntryBadges badges={exp.badges} />}
+          {exp.badges && <EntryBadges badges={exp.badges} type={exp.type} />}
 
           {/* Title + subtitle */}
           <h3 className="text-sm sm:text-base font-bold text-foreground leading-snug">
