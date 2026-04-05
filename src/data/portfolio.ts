@@ -326,16 +326,16 @@ export const PORTFOLIO = {
     {
       id: "exp-ta",
       year: "Apr 2026 – Present",
-      title: "Teaching Assistant (Exercise Reviewer)",
+      title: "Teaching Assistant (Assignment Grader)",
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
-          "Selected by the university to review and evaluate student assignments in core computer science courses, including Object-Oriented Programming, Advanced OOP, and Principles of Programming Languages.",
+          "Served as a Teaching Assistant for core computer science courses, reviewing and evaluating programming assignments in Object-Oriented Programming, Advanced OOP, and Principles of Programming Languages.",
       highlights: [
         "Reviewed and graded student assignments with a focus on correctness, abstraction, and design quality",
         "Provided structured feedback on OOP principles, debugging, and code organization",
         "Identified common software design mistakes and guided improvements",
-        "Strengthened practical expertise in code review and software engineering fundamentals",
+        "Helped uphold code quality expectations around abstraction, correctness, and software design",
       ],
       badges: ["Selected by Faculty"],
       tech: ["Java", "OOP", "Code Review"],
