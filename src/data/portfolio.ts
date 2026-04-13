@@ -326,7 +326,7 @@ export const PORTFOLIO = {
     {
       id: "exp-ta",
       year: "Apr 2026 – Present",
-      title: "Teaching Assistant (Assignment Grader)",
+      title: "Teaching Assistant",
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
@@ -338,7 +338,7 @@ export const PORTFOLIO = {
         "Helped uphold code quality expectations around abstraction, correctness, and software design",
       ],
       badges: ["Selected by Faculty"],
-      tech: ["Java", "OOP", "Code Review"],
+      tech: ["Java", "Python", "C++", "OOP", "Code Review", "Debugging", "Software Design Patterns"],
     },
     {
       id: "exp-adama-staffschedule",
