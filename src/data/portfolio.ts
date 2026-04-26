@@ -330,15 +330,16 @@ export const PORTFOLIO = {
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
-          "Served as a Teaching Assistant for core computer science courses, reviewing and evaluating programming assignments in Object-Oriented Programming, Advanced OOP, and Principles of Programming Languages.",
+          "Teaching Assistant for core computer science courses, reviewing and evaluating both programming assignments and theoretical questions in Object-Oriented Programming, Advanced OOP, Data Structures, and Principles of Programming Languages.",
       highlights: [
-        "Reviewed and graded student assignments with a focus on correctness, abstraction, and design quality",
-        "Provided structured feedback on OOP principles, debugging, and code organization",
-        "Identified common software design mistakes and guided improvements",
-        "Helped uphold code quality expectations around abstraction, correctness, and software design",
+        "Reviewed and graded programming and theoretical assignments with a focus on correctness, abstraction, and software design quality.",
+        "Provided structured feedback on OOP principles, data structures, design patterns, debugging, and code organization.",
+        "Evaluated conceptual understanding of design patterns and programming paradigms alongside implementation quality.",
+        "Assessed implementations of core data structures (e.g., lists, trees, graphs) for correctness and efficiency.",
+        "Maintained consistent grading standards across multiple courses and assignment types."
       ],
       badges: ["Selected by Faculty"],
-      tech: ["Java", "Python", "C++", "OOP", "Code Review", "Debugging", "Software Design Patterns"],
+      tech: ["Java", "Python", "C++", "OOP", "Data Structures", "Design Patterns", "Code Review", "Debugging"]
     },
     {
       id: "exp-adama-staffschedule",
