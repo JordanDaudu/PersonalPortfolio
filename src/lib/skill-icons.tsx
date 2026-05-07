@@ -6,6 +6,14 @@ import {
     Brain,
     Users,
     Clock3,
+
+    Sparkles,
+    Bug,
+    CheckCheck,
+    MessageCircle,
+    Cpu,
+    Code,
+    Wand2,
 } from "lucide-react";
 
 export const SKILL_ICON_REGISTRY = {
@@ -16,6 +24,14 @@ export const SKILL_ICON_REGISTRY = {
     brain: Brain,
     users: Users,
     clock3: Clock3,
+
+    sparkles: Sparkles,
+    bug: Bug,
+    checkCheck: CheckCheck,
+    messageCircle: MessageCircle,
+    cpu: Cpu,
+    code: Code,
+    wand2: Wand2,
 } as const;
 
 export type SkillIconName = keyof typeof SKILL_ICON_REGISTRY;

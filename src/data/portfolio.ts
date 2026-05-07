@@ -67,6 +67,7 @@ export const PORTFOLIO = {
       category: "Frameworks & Engines",
       items: [
         { name: "Unity",   icon: DEVICON_ICON("unity") },
+        { name: "Spring Boot", icon: DEVICON_ICON("spring") },
         { name: ".NET",    icon: DEVICON_ICON("dot-net", "plain") },
         { name: "PyTorch", icon: DEVICON_ICON("pytorch") },
         { name: "OpenCV",  icon: DEVICON_ICON("opencv") },
@@ -79,14 +80,34 @@ export const PORTFOLIO = {
         { name: "Git",       icon: DEVICON_ICON("git") },
         { name: "GitHub",    icon: DEVICON_ICON("github") },
         { name: "Jira",      icon: DEVICON_ICON("jira", "plain") },
+        { name: "VS Code", icon: DEVICON_ICON("vscode") },
         { name: "JetBrains", icon: IMAGE_ICON("https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg") },
         { name: "Replit",    icon: IMAGE_ICON("https://cdn.simpleicons.org/replit/FF3C00") },
       ],
     },
     {
-      category: "Backend & Data",
+      category: "Backend & Databases",
       items: [
         { name: "PostgreSQL", icon: DEVICON_ICON("postgresql") },
+      ],
+    },
+    {
+      category: "AI Platforms",
+      items: [
+        { name: "GitHub Copilot", icon: IMAGE_ICON("https://cdn.simpleicons.org/githubcopilot") },
+        { name: "ChatGPT", icon: IMAGE_ICON("https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.svg") },
+        { name: "Claude", icon: IMAGE_ICON("https://cdn.simpleicons.org/claude") },
+        { name: "Gemini", icon: IMAGE_ICON("https://cdn.simpleicons.org/googlegemini") },
+        { name: "Cursor", icon: IMAGE_ICON("https://cdn.simpleicons.org/cursor") },
+      ],
+    },
+    {
+      category: "AI & LLM Engineering",
+      items: [
+        { name: "Prompt Engineering", icon: LUCIDE_ICON("sparkles") },
+        { name: "AI Debugging", icon: LUCIDE_ICON("bug") },
+        { name: "AI Code Review", icon: LUCIDE_ICON("checkCheck") },
+        { name: "LLM Workflows", icon: LUCIDE_ICON("workflow") },
       ],
     },
     {
@@ -330,15 +351,15 @@ export const PORTFOLIO = {
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
-          "Teaching Assistant for core computer science courses, reviewing and evaluating both programming assignments and theoretical questions in Object-Oriented Programming, Advanced OOP, Data Structures, and Principles of Programming Languages.",
+          "Teaching Assistant for computer science courses, reviewing and evaluating both programming assignments and theoretical questions in Introduction to Computer Science, Object-Oriented Programming, Advanced OOP, Data Structures, and Principles of Programming Languages.",
       highlights: [
-        "Reviewed and graded programming and theoretical assignments with a focus on correctness, abstraction, and software design quality.",
-        "Provided structured feedback on OOP principles, data structures, design patterns, debugging, and code organization.",
-        "Evaluated conceptual understanding of design patterns and programming paradigms alongside implementation quality.",
-        "Assessed implementations of core data structures (e.g., lists, trees, graphs) for correctness and efficiency.",
+        "Reviewed and graded programming and theoretical assignments for 80+ students across multiple computer science courses.",
+        "Evaluated work with a focus on correctness, abstraction, software design quality, and code organization.",
+        "Provided structured feedback on OOP principles, data structures, design patterns, debugging, and programming paradigms.",
+        "Assessed implementations of core data structures such as lists, trees, and graphs for correctness and efficiency.",
         "Maintained consistent grading standards across multiple courses and assignment types."
       ],
-      badges: ["Selected by Faculty"],
+      badges: ["Selected by Faculty", "80+ Students Supported"],
       tech: ["Java", "Python", "C++", "OOP", "Data Structures", "Design Patterns", "Code Review", "Debugging"]
     },
     {
