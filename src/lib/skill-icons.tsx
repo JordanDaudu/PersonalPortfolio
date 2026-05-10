@@ -14,6 +14,7 @@ import {
     Cpu,
     Code,
     Wand2,
+    Server,
 } from "lucide-react";
 
 export const SKILL_ICON_REGISTRY = {
@@ -32,6 +33,7 @@ export const SKILL_ICON_REGISTRY = {
     cpu: Cpu,
     code: Code,
     wand2: Wand2,
+    server: Server,
 } as const;
 
 export type SkillIconName = keyof typeof SKILL_ICON_REGISTRY;

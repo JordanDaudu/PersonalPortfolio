@@ -36,7 +36,7 @@ export const PORTFOLIO = {
     name: "Jordan Daudu",
     initials: "JD",
     title: "Software Engineering Student | Java, C#, Python Developer",
-    tagline: "Software engineering student building scalable systems and elegant solutions.",
+    tagline: "Building scalable systems with clean architecture, Dockerized workflows, and practical software engineering.",
     availabilityBadge: "Available for new opportunities",
     bio: [
       "I am a Software Engineering student at SCE (Shamoon College of Engineering) with a strong foundation in Python, Java, C#, and C++. Experienced in OOP, data structures, and problem-solving — I'm a fast learner, adaptable, and motivated to write clean, efficient code while exploring new technologies.",
@@ -79,6 +79,7 @@ export const PORTFOLIO = {
       items: [
         { name: "Git",       icon: DEVICON_ICON("git") },
         { name: "GitHub",    icon: DEVICON_ICON("github") },
+        { name: "Docker",    icon: DEVICON_ICON("docker") },
         { name: "Jira",      icon: DEVICON_ICON("jira", "plain") },
         { name: "VS Code", icon: DEVICON_ICON("vscode") },
         { name: "JetBrains", icon: IMAGE_ICON("https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg") },
@@ -89,6 +90,8 @@ export const PORTFOLIO = {
       category: "Backend & Databases",
       items: [
         { name: "PostgreSQL", icon: DEVICON_ICON("postgresql") },
+        { name: "Docker Compose", icon: DEVICON_ICON("docker") },
+        { name: "REST APIs", icon: LUCIDE_ICON("server") },
       ],
     },
     {
@@ -131,6 +134,26 @@ export const PORTFOLIO = {
 
   projects: [
     // ── Featured (newest first) ──────────────────────────────────────────────
+    {
+      id: "gradeflow",
+      title: "GradeFlow",
+      subtitle: "Full-Stack Grading Workflow Platform",
+      category: "Full-Stack / DevOps",
+      featured: true,
+      thumbnail: "/images/project-gradeflow.png",
+      description:
+          "A full-stack grading workflow platform designed to help teaching assistants and lecturers manage programming assignments, student submissions, grading rubrics, file previews, feedback, and structured grade records. Built around a real academic workflow, with a focus on clean role separation, maintainable architecture, Dockerized deployment, and cloud-ready infrastructure.",
+      tech: ["React", "NestJS", "PostgreSQL", "Docker", "AWS S3", "JWT"],
+      highlights: [
+        "Role-based workflows for admins, lecturers, and graders",
+        "Assignment and submission management with structured grading notes",
+        "Designed for live preview of uploaded files such as PDFs and documents",
+        "Dockerized frontend, backend, database, and file-storage services for local development",
+        "Cloud-oriented architecture using managed database and S3-compatible file storage",
+      ],
+      githubUrl: "https://github.com/JordanDaudu/GradeFlow",
+      demoUrl: "",
+    },
     {
       id: "nomad-protocol",
       title: "Nomad Protocol: AETERRA",
@@ -192,6 +215,26 @@ export const PORTFOLIO = {
     },
 
     // ── Other Projects (newest to oldest) ───────────────────────────────────
+    {
+      id: "intelligent-investor",
+      title: "Intelligent Investor",
+      subtitle: "Full-Stack Personal Finance & DevOps Platform",
+      category: "Full-Stack / DevOps",
+      featured: false,
+      thumbnail: "/images/project-intelligent-investor.png",
+      description:
+          "A full-stack personal finance dashboard built as a DevOps-focused project, combining a React frontend, backend API, PostgreSQL persistence, Dockerized services, and CI/CD workflows. The system helps users model financial profiles, spending plans, and long-term investment projections while demonstrating clean project structure, containerization, and deployment readiness.",
+      tech: ["React", "NestJS", "PostgreSQL", "Prisma", "Docker", "GitHub Actions"],
+      highlights: [
+        "Full-stack architecture with separate frontend, backend, and PostgreSQL database services",
+        "Docker Compose setup for reproducible local development and deployment testing",
+        "Financial profile and spending-plan persistence using PostgreSQL and Prisma",
+        "Projection logic for long-term investment scenarios",
+        "Published multi-architecture Docker images for frontend and backend services",
+      ],
+      githubUrl: "https://github.com/JordanDaudu/intelligent-investor-platform",
+      demoUrl: "",
+    },
     {
       id: "nomad-protocol-website",
       title: "AETERRA Engineering Archive Website",

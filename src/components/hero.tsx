@@ -128,7 +128,7 @@ export function Hero() {
               {/* Floating experience badge */}
               <div className="absolute -top-4 -right-4 bg-card border border-border/50 rounded-2xl px-4 py-3 shadow-xl shadow-black/20 backdrop-blur-sm">
                 <div className="text-xs text-muted-foreground font-medium">Projects Built</div>
-                <div className="text-2xl font-bold text-cyan-400">5+</div>
+                <div className="text-2xl font-bold text-cyan-400">10+</div>
               </div>
             </div>
           </motion.div>
