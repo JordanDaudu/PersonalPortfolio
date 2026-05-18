@@ -39,9 +39,11 @@ export const PORTFOLIO = {
     tagline: "Building scalable systems with clean architecture, Dockerized workflows, and practical software engineering.",
     availabilityBadge: "Available for new opportunities",
     bio: [
-      "I am a Software Engineering student at SCE (Shamoon College of Engineering) with a strong foundation in Python, Java, C#, and C++. Experienced in OOP, data structures, and problem-solving — I'm a fast learner, adaptable, and motivated to write clean, efficient code while exploring new technologies.",
-      "My work spans from architecting robust backend game engines in Java, to building scalable gameplay systems in Unity/C#, to developing deep learning pipelines in PyTorch. I approach every project methodically, prioritizing clean architecture and maintainable code.",
-      "Currently looking for software engineering roles where I can contribute to impactful projects, collaborate with talented teams, and continue growing my technical expertise.",
+      "I am a Software Engineering student at SCE (Shamoon College of Engineering) with a strong foundation in Python, Java, C#, and C++. My work combines software engineering, data analysis, and practical problem-solving — from backend systems and game architecture to machine learning pipelines built on real research data.",
+
+      "As a Teaching Assistant, I review programming assignments with a focus on correctness, abstraction, and software design quality. As a Research Assistant, I worked on a biological data analysis project using PyTorch to analyze CSV-based movement tracking data and predict fly age groups from motion patterns.",
+
+      "Currently looking for junior software engineering, backend, QA automation, or data-oriented roles where I can contribute to impactful projects, collaborate with strong teams, and continue growing technically.",
     ],
     phone:    "+972-(054)-250-8121",
     email:    "jordandaudu@gmail.com",
@@ -272,17 +274,19 @@ export const PORTFOLIO = {
     {
       id: "flytracking-ai",
       title: "FlyTracking AI",
-      subtitle: "Deep Learning Research — PyTorch / RNN",
-      category: "AI / Research",
+      subtitle: "Biological Data Analysis & Deep Learning — PyTorch",
+      category: "Data Analysis / Machine Learning",
       featured: false,
       thumbnail: "/images/project-flytracking.png",
       description:
-        "Research project at SCE: built a Hybrid Neural Network combining a Bidirectional LSTM + Attention Pooling sequence branch with a statistical summary branch to classify fly age into 7 groups from time-series trajectory data (x/y paths), collaborating directly with biology researchers.",
-      tech: ["Python", "PyTorch", "BiLSTM", "Attention", "OpenCV", "NumPy"],
+          "Research project at SCE focused on biological data analysis and fly age prediction. Took over an existing fly movement-tracking project and developed a PyTorch-based deep learning pipeline to analyze CSV trajectory data, extract motion-based features, and classify fly age groups from time-series movement patterns.",
+      tech: ["Python", "PyTorch", "NumPy", "CSV Data", "Time-Series Data", "Feature Engineering", "Model Evaluation"],
       highlights: [
-        "Hybrid architecture: BiLSTM + Attention Pooling fused with a statistical summary branch",
-        "7-class age prediction from sequential trajectory (x, y) paths and behavioral statistics",
-        "Collaborated with biology researchers to engineer biologically relevant features",
+        "Processed and analyzed motion-tracking CSV data containing fly trajectory patterns",
+        "Engineered biologically relevant movement features from time-series x/y coordinate data",
+        "Developed multiple PyTorch model iterations for fly age-group prediction",
+        "Optimized training performance and evaluated model outputs against labeled biological data",
+        "Collaborated with biology researchers to connect data patterns with meaningful biological interpretation",
       ],
       githubUrl: "https://github.com/JordanDaudu/FlyTrackerDataLearning",
       demoUrl: "",
@@ -431,19 +435,19 @@ export const PORTFOLIO = {
     {
       id: "exp-fly",
       year: "Sep 2025 – Oct 2025",
-      title: "Research Assistant",
+      title: "Research Assistant — Data Analysis & Machine Learning",
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
-          "Worked on a biological data analysis project predicting fly age from movement tracking data. Extended an existing FlyTracking ML pipeline using PyTorch, developing RNN models and collaborating with biology researchers.",
+          "Worked on a biological data analysis project focused on predicting fly age groups from movement-tracking data. Took over an existing fly-tracking pipeline and developed PyTorch-based deep learning models to analyze motion-based CSV data, engineer biologically relevant features, and support reliable data interpretation.",
       highlights: [
-        "Developed RNN-based models using PyTorch to analyze time-series motion data from CSV",
-        "Engineered biologically relevant features to improve model accuracy",
-        "Collaborated with biology researchers to translate biological insights into ML features",
-        "Iterated across multiple model versions, optimizing training performance and evaluation metrics",
+        "Analyzed time-series movement-tracking data from CSV files",
+        "Built PyTorch deep learning models for fly age-group prediction",
+        "Improved an existing movement-tracking pipeline through feature engineering and training optimization",
+        "Collaborated with biology researchers to translate domain insights into meaningful ML features",
       ],
-      badges: ["Applied ML Research"],
-      tech: ["Python", "PyTorch", "RNN", "Time-Series ML"],
+      badges: ["Data Analysis", "Applied ML Research"],
+      tech: ["Python", "PyTorch", "CSV Data", "Time-Series Data", "Feature Engineering", "Model Evaluation"],
       links: [
         {
           label: "GitHub",
