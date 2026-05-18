@@ -59,8 +59,6 @@ export const PORTFOLIO = {
         { name: "Python",   icon: DEVICON_ICON("python") },
         { name: "C++",      icon: DEVICON_ICON("cplusplus") },
         { name: "C#",       icon: DEVICON_ICON("csharp") },
-        { name: "GDScript", icon: DEVICON_ICON("godot") },
-        { name: "HTML",     icon: DEVICON_ICON("html5") },
       ],
     },
     {
