@@ -19,7 +19,6 @@ export function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
           {/* Left — Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -102,37 +101,40 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            className="hidden lg:flex justify-center items-center"
+            className="hidden lg:flex justify-center xl:justify-end items-center"
           >
-            <div className="relative">
-              {/* Glow ring */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-cyan-500/20 rounded-3xl blur-2xl opacity-60" />
+            <div className="relative isolate">
+              {/* Theme-aware glow so the portrait feels integrated in both light and dark mode. */}
+              <div className="absolute -inset-10 -z-20 rounded-[2.75rem] bg-[radial-gradient(circle_at_30%_20%,rgba(96,165,250,0.22),transparent_36%),radial-gradient(circle_at_75%_75%,rgba(129,140,248,0.18),transparent_42%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.30),transparent_36%),radial-gradient(circle_at_75%_75%,rgba(99,102,241,0.24),transparent_42%)] blur-3xl opacity-90" />
+              <div className="absolute -inset-px -z-10 rounded-[2.15rem] bg-gradient-to-br from-primary/25 via-cyan-400/15 to-transparent dark:from-primary/35 dark:via-cyan-400/20 dark:to-transparent opacity-80" />
 
-              {/* Photo frame */}
-              <div className="relative w-80 h-96 rounded-3xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/20">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/jordan-profile.jpg`}
-                  alt="Jordan Daudu"
-                  className="w-full h-full object-cover object-top"
-                />
-                {/* Overlay gradient at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background/70 to-transparent" />
+              {/* Portrait frame */}
+              <div className="relative w-[22rem] h-[27.5rem] xl:w-[24rem] xl:h-[30rem] rounded-[2.05rem] overflow-hidden border border-white/55 dark:border-primary/25 bg-gradient-to-br from-white/95 via-slate-100 to-slate-200 dark:from-slate-900/95 dark:via-slate-900 dark:to-blue-950/80 shadow-[0_20px_60px_rgba(15,23,42,0.12)] dark:shadow-[0_28px_90px_rgba(37,99,235,0.30)] backdrop-blur-sm p-2">
+                <div className="relative h-full w-full overflow-hidden rounded-[1.65rem] bg-slate-200/70 dark:bg-slate-800/70">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/jordan-profile-hero.webp`}
+                    alt="Jordan Daudu professional portrait"
+                    className="w-full h-full object-cover object-center"
+                  />
+
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/12 via-transparent to-black/[0.04] dark:from-white/8 dark:to-black/10" />
+                  <div className="pointer-events-none absolute inset-0 rounded-[1.65rem] ring-1 ring-black/5 dark:ring-white/10" />
+                </div>
               </div>
 
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-card border border-border/50 rounded-2xl px-4 py-3 shadow-xl shadow-black/20 backdrop-blur-sm">
+              <div className="absolute -bottom-4 -left-5 bg-card/92 border border-border/70 rounded-2xl px-4 py-3 shadow-xl shadow-black/15 dark:shadow-black/25 backdrop-blur-md">
                 <div className="text-xs text-muted-foreground font-medium">Current GPA</div>
                 <div className="text-2xl font-bold text-primary">95</div>
               </div>
 
               {/* Floating experience badge */}
-              <div className="absolute -top-4 -right-4 bg-card border border-border/50 rounded-2xl px-4 py-3 shadow-xl shadow-black/20 backdrop-blur-sm">
+              <div className="absolute -top-4 -right-5 bg-card/92 border border-border/70 rounded-2xl px-4 py-3 shadow-xl shadow-black/15 dark:shadow-black/25 backdrop-blur-md">
                 <div className="text-xs text-muted-foreground font-medium">Projects Built</div>
                 <div className="text-2xl font-bold text-cyan-400">10+</div>
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
