@@ -68,10 +68,10 @@ export const PORTFOLIO = {
       items: [
         { name: "Unity",   icon: DEVICON_ICON("unity") },
         { name: "Spring Boot", icon: DEVICON_ICON("spring") },
-        { name: ".NET",    icon: DEVICON_ICON("dot-net", "plain") },
+        // { name: ".NET",    icon: DEVICON_ICON("dot-net", "plain") },
         { name: "PyTorch", icon: DEVICON_ICON("pytorch") },
-        { name: "OpenCV",  icon: DEVICON_ICON("opencv") },
-        { name: "NumPy",   icon: DEVICON_ICON("numpy") },
+        // { name: "OpenCV",  icon: DEVICON_ICON("opencv") },
+        // { name: "NumPy",   icon: DEVICON_ICON("numpy") },
       ],
     },
     {
@@ -90,6 +90,7 @@ export const PORTFOLIO = {
       category: "Backend & Databases",
       items: [
         { name: "PostgreSQL", icon: DEVICON_ICON("postgresql") },
+        { name: "MySQL", icon: DEVICON_ICON("mysql") },
         { name: "Docker Compose", icon: DEVICON_ICON("docker") },
         { name: "REST APIs", icon: LUCIDE_ICON("server") },
       ],
