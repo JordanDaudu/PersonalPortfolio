@@ -57,10 +57,10 @@ export const PORTFOLIO = {
     {
       category: "Programming Languages",
       items: [
-        { name: "Java",     icon: DEVICON_ICON("java") },
-        { name: "Python",   icon: DEVICON_ICON("python") },
-        { name: "C++",      icon: DEVICON_ICON("cplusplus") },
-        { name: "C#",       icon: DEVICON_ICON("csharp") },
+        { name: "Java",       icon: DEVICON_ICON("java") },
+        { name: "Python",     icon: DEVICON_ICON("python") },
+        { name: "C#",         icon: DEVICON_ICON("csharp") },
+        { name: "JavaScript", icon: DEVICON_ICON("javascript") },
       ],
     },
     {
@@ -68,6 +68,7 @@ export const PORTFOLIO = {
       items: [
         { name: "Unity",   icon: DEVICON_ICON("unity") },
         { name: "Spring Boot", icon: DEVICON_ICON("spring") },
+        { name: "Express",     icon: DEVICON_ICON("express") },
         // { name: ".NET",    icon: DEVICON_ICON("dot-net", "plain") },
         { name: "PyTorch", icon: DEVICON_ICON("pytorch") },
         // { name: "OpenCV",  icon: DEVICON_ICON("opencv") },
@@ -397,16 +398,28 @@ export const PORTFOLIO = {
       subtitle: "SCE — Shamoon College of Engineering",
       type: "work",
       description:
-          "Teaching Assistant for computer science courses, reviewing and evaluating both programming assignments and theoretical questions in Introduction to Computer Science, Object-Oriented Programming, Advanced OOP, Data Structures, and Principles of Programming Languages.",
+          "Teaching Assistant for computer science courses, reviewing and evaluating both programming assignments and theoretical questions in Introduction to Computer Science, Object-Oriented Programming, Advanced OOP, Data Structures, Principles of Programming Languages, and Automata and Formal Languages.",
       highlights: [
         "Reviewed and graded programming and theoretical assignments for 80+ students across multiple computer science courses.",
-        "Evaluated work with a focus on correctness, abstraction, software design quality, and code organization.",
-        "Provided structured feedback on OOP principles, data structures, design patterns, debugging, and programming paradigms.",
+        "Evaluated work with a focus on correctness, abstraction, software design quality, code organization, and problem-solving.",
+        "Provided structured feedback on OOP principles, data structures, design patterns, debugging, programming paradigms, and formal language concepts.",
         "Assessed implementations of core data structures such as lists, trees, and graphs for correctness and efficiency.",
+        "Reviewed theoretical solutions involving automata, formal languages, grammars, and computational models.",
         "Maintained consistent grading standards across multiple courses and assignment types."
       ],
       badges: ["Selected by Faculty", "80+ Students Supported"],
-      tech: ["Java", "Python", "C++", "OOP", "Data Structures", "Design Patterns", "Code Review", "Debugging"]
+      tech: [
+        "Java",
+        "Python",
+        "C++",
+        "OOP",
+        "Data Structures",
+        "Design Patterns",
+        "Automata Theory",
+        "Formal Languages",
+        "Code Review",
+        "Debugging"
+      ]
     },
     {
       id: "exp-adama-staffschedule",
